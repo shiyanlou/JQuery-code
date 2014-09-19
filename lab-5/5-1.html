@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script type="text/javascript" src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+<style>
+.one {
+    background:black;
+    height:100px;
+    width:200px;
+}
+</style>
+<script type="text/javascript">
+//插件编写
+;(function($) {
+    jQuery.fn.extend({
+        "background":function(value){
+            if(value==undefined){
+                return this.css("background");
+            }else{
+                return this.css("background",value);
+            }
+        }
+    });
+})(jQuery);
+
+//插件使用
+$(document).ready(function(){
+    alert($('.one').background());
+    //或设置背景色：$('.one').background("red");
+});
+</script>
+</head>
+
+<body>
+     <div class="one"></div>
+</body>
+</html>
